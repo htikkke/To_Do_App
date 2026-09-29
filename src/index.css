@@ -3,4 +3,18 @@
 
 @theme {
   --font-josefin: "Josefin Sans", sans-serif;
+  /* Light-theme-colors */
+  --color-custom-gray-50: hsl(0, 0%, 98%);
+  --color-custom-purple-300: hsl(234, 39%, 85%);
+  --color-custom-gray-300: hsl(233, 11%, 84%);
+  --color-custom-gray-600: hsl(236, 9%, 61%);
+  --color-custom-navy-850: hsl(235, 19%, 35%);
+  /* Dark-theme-colors */
+  --color-custom-Navy-900: hsl(235, 24%, 19%);
+  --color-custom-Purple-300: hsl(234, 39%, 85%);
+  --color-custom-Purple-100-hover: hsl(236, 33%, 92%);
+  --color-custom-Purple-600: hsl(235, 16%, 43%);
+  --color-custom-Purple-700: hsl(233, 14%, 35%);
+  --color-custom-Purple-800: hsl(237, 14%, 26%);
+  --color-custom-Gray-600: hsl(236, 9%, 61%);
 }
