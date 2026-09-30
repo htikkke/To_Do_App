@@ -9,7 +9,7 @@ export default function App() {
     >
       <div
         id="to-do-app-container"
-        className="w-[40%] rounded-2xl p-6 flex flex-col gap-8"
+        className="w-[40%] rounded-2xl p-6 flex flex-col gap-6"
       >
         <Header />
         <InputContainer />
