@@ -5,6 +5,8 @@ import ToDoLists from "./ToDoLists";
 
 const FormContext = createContext();
 export default function App() {
+  const [todos, setToDos] = useState([]);
+  const [inputText, setInputText] = useState("");
   return (
     <FormContext.Provider>
       <div
