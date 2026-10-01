@@ -8,7 +8,7 @@ export default function App() {
   const [todos, setToDos] = useState([]);
   const [inputText, setInputText] = useState("");
   return (
-    <FormContext.Provider>
+    <FormContext.Provider value={{ todos, setToDos, inputText, setInputText }}>
       <div
         id="main-container"
         className="w-full min-h-screen bg-[url('/asset/images/bg-desktop-light.jpg')] bg-repeat-x flex items-center justify-center"
