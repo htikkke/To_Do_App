@@ -26,11 +26,11 @@ export default function App() {
     >
       <div
         id="main-container"
-        className="w-full min-h-screen bg-[url('/asset/images/bg-desktop-light.jpg')] bg-repeat-x flex items-center justify-center"
+        className="w-full min-h-screen bg-[url('/asset/images/bg-desktop-light.jpg')] bg-repeat-x flex items-start justify-center"
       >
         <div
           id="to-do-app-container"
-          className="w-[40%] rounded-2xl p-6 flex flex-col gap-6"
+          className="w-[40%] rounded-2xl p-6 flex flex-col gap-6 mt-18"
         >
           <Header />
           <InputContainer />
