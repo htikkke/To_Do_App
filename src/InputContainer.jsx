@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { FormContent } from "./App";
+import { FormContext } from "./App";
 
 export default function InputContainer() {
-  const { inputText, setInputText } = useContext(FormContent);
+  const { inputText, setInputText } = useContext(FormContext);
   return (
     <form className="flex items-center gap-4 bg-white rounded-md px-6 py-4 shadow-lg w-full">
       <div className="w-6 h-6 rounded-full border border-custom-gray-300 cursor-pointer"></div>
