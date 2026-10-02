@@ -7,6 +7,7 @@ export const FormContext = createContext();
 export default function App() {
   const [todos, setToDos] = useState([]);
   const [inputText, setInputText] = useState("");
+
   const handleInput = (e) => {
     e.preventDefault();
     if (!inputText.trim()) {
@@ -20,9 +21,24 @@ export default function App() {
     setToDos([...todos, newToDo]);
     setInputText("");
   };
+
+  const toggleToDo = (id) => {
+    setToDos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
+    );
+  };
   return (
     <FormContext.Provider
-      value={{ todos, setToDos, inputText, setInputText, handleInput }}
+      value={{
+        todos,
+        setToDos,
+        inputText,
+        setInputText,
+        handleInput,
+        toggleToDo,
+      }}
     >
       <div
         id="main-container"

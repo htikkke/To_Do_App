@@ -14,7 +14,7 @@ export default function InputContainer() {
         onChange={(e) => setInputText(e.target.value)}
         placeholder="Create a new todo..."
         value={inputText}
-        className="w-full p-4 rounded-xl bg-white"
+        className="w-full px-4 py-1 rounded-xl bg-white outline-none"
       />
     </form>
   );
