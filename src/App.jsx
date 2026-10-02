@@ -7,8 +7,23 @@ export const FormContext = createContext();
 export default function App() {
   const [todos, setToDos] = useState([]);
   const [inputText, setInputText] = useState("");
+  const handleInput = (e) => {
+    e.preventDefault();
+    if (!inputText.trim()) {
+      return;
+    }
+    const newToDo = {
+      id: Date.now(),
+      text: inputText,
+      completed: false,
+    };
+    setToDos([...todos, newToDo]);
+    setInputText("");
+  };
   return (
-    <FormContext.Provider value={{ todos, setToDos, inputText, setInputText }}>
+    <FormContext.Provider
+      value={{ todos, setToDos, inputText, setInputText, handleInput }}
+    >
       <div
         id="main-container"
         className="w-full min-h-screen bg-[url('/asset/images/bg-desktop-light.jpg')] bg-repeat-x flex items-center justify-center"
