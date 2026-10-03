@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { FormContext } from "./App";
 
 export default function ToDoLists() {
-  const { todos } = useContext(FormContext);
+  const { todos, toggleToDo } = useContext(FormContext);
   return (
     <div
       id="toDoListContainer"
