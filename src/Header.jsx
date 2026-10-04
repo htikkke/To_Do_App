@@ -4,7 +4,7 @@ export default function Header() {
       <h1 className="uppercase text-white font-bold text-4xl tracking-widest">
         Todo
       </h1>
-      <img src="./asset/images/icon-moon.svg" />
+      <img src="/asset/images/icon-moon.svg" />
     </div>
   );
 }

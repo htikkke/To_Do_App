@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FormContext } from "./App";
+import Footer from "./Footer";
 
 export default function ToDoLists() {
   const { todos, toggleToDo } = useContext(FormContext);
@@ -16,7 +17,7 @@ export default function ToDoLists() {
               ${todo.completed ? "bg-linear-to-br from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)] border-transparent" : "bg-transparent border-custom-gray-300"}`}
           >
             {todo.completed && (
-              <img src="./asset/images/icon-check.svg" alt="check-mark" />
+              <img src="/asset/images/icon-check.svg" alt="check-mark" />
             )}
           </button>
           <span
@@ -26,6 +27,7 @@ export default function ToDoLists() {
           </span>
         </div>
       ))}
+      <Footer />
     </div>
   );
 }
