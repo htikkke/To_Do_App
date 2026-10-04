@@ -19,7 +19,11 @@ export default function ToDoLists() {
               <img src="./asset/images/icon-check.svg" alt="check-mark" />
             )}
           </button>
-          <span className="text-lg text-custom-Gray-600">{todo.text}</span>
+          <span
+            className={`text-lg text-custom-Gray-600 ${todo.completed && "line-through"}`}
+          >
+            {todo.text}
+          </span>
         </div>
       ))}
     </div>
