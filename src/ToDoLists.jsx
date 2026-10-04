@@ -20,7 +20,7 @@ export default function ToDoLists() {
             )}
           </button>
           <span
-            className={`text-lg text-custom-Gray-600 ${todo.completed && "line-through"}`}
+            className={`text-lg  ${todo.completed ? "line-through text-custom-gray-300" : "text-custom-Gray-600"}`}
           >
             {todo.text}
           </span>
