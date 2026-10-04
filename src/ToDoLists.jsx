@@ -4,6 +4,8 @@ import Footer from "./Footer";
 
 export default function ToDoLists() {
   const { todos, toggleToDo } = useContext(FormContext);
+  // If there are no todos, don't render the container or footer
+  if (todos.length === 0) return null;
   return (
     <div
       id="toDoListContainer"
