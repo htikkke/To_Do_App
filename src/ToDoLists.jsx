@@ -10,10 +10,15 @@ export default function ToDoLists() {
     >
       {todos.map((todo) => (
         <div key={todo.id} className="flex items-center gap-6 px-6 py-4">
-          <div
+          <button
             onClick={() => toggleToDo(todo.id)}
-            className="w-6 h-6 rounded-full border border-custom-gray-300 cursor-pointer"
-          ></div>
+            className={`w-6 h-6 rounded-full border cursor-pointer transition-all flex items-center justify-center
+              ${todo.completed ? "bg-linear-to-br from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)] border-transparent" : "bg-transparent border-custom-gray-300"}`}
+          >
+            {todo.completed && (
+              <img src="./asset/images/icon-check.svg" alt="check-mark" />
+            )}
+          </button>
           <span className="text-lg text-custom-Gray-600">{todo.text}</span>
         </div>
       ))}
