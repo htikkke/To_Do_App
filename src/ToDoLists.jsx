@@ -3,7 +3,7 @@ import { FormContext } from "./App";
 import Footer from "./Footer";
 
 export default function ToDoLists() {
-  const { todos, toggleToDo } = useContext(FormContext);
+  const { todos, toggleToDo, deleteToDo } = useContext(FormContext);
   // If there are no todos, don't render the container or footer
   if (todos.length === 0) return null;
   return (
@@ -44,6 +44,7 @@ export default function ToDoLists() {
           </span>
           {/* cross-icon */}
           <img
+            onClick={() => deleteToDo(todo.id)}
             src="/asset/images/icon-cross.svg"
             alt="cross-icon"
             className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
