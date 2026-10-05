@@ -29,6 +29,10 @@ export default function App() {
       ),
     );
   };
+
+  const deleteToDo = (id) => {
+    setToDos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
   return (
     <FormContext.Provider
       value={{
@@ -38,6 +42,7 @@ export default function App() {
         setInputText,
         handleInput,
         toggleToDo,
+        deleteToDo,
       }}
     >
       <div

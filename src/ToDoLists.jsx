@@ -16,6 +16,7 @@ export default function ToDoLists() {
           key={todo.id}
           className="flex items-center gap-6 justify-between px-6 py-4 group cursor-pointer"
         >
+          {/* Check-box */}
           <button
             onClick={() => toggleToDo(todo.id)}
             className={`relative w-6 h-6 rounded-full border p-px cursor-pointer transition-all flex items-center justify-center
@@ -26,6 +27,7 @@ export default function ToDoLists() {
           ${todo.completed ? "bg-transparent" : "bg-white"}
         `}
             ></span>
+            {/* right-mark in the check-box */}
             {todo.completed && (
               <img
                 src="/asset/images/icon-check.svg"
@@ -34,11 +36,13 @@ export default function ToDoLists() {
               />
             )}
           </button>
+          {/* Text */}
           <span
             className={`text-lg cursor-pointer ${todo.completed ? "line-through text-custom-gray-300" : "text-custom-Gray-600"}`}
           >
             {todo.text}
           </span>
+          {/* cross-icon */}
           <img
             src="/asset/images/icon-cross.svg"
             alt="cross-icon"
