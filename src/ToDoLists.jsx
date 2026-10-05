@@ -15,11 +15,20 @@ export default function ToDoLists() {
         <div key={todo.id} className="flex items-center gap-6 px-6 py-4">
           <button
             onClick={() => toggleToDo(todo.id)}
-            className={`w-6 h-6 rounded-full border cursor-pointer transition-all flex items-center justify-center
-              ${todo.completed ? "bg-linear-to-br from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)] border-transparent" : "bg-transparent border-custom-gray-300"}`}
+            className={`relative w-6 h-6 rounded-full border p-px cursor-pointer transition-all flex items-center justify-center
+              ${todo.completed ? "bg-linear-to-br from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)] border-transparent" : "border-custom-gray-300 hover:bg-linear-to-br hover:from-[hsl(192,100%,67%)] hover:to-[hsl(280,87%,65%)]"}`}
           >
+            <span
+              className={`w-full h-full rounded-full flex items-center justify-center
+          ${todo.completed ? "bg-transparent" : "bg-white"}
+        `}
+            ></span>
             {todo.completed && (
-              <img src="/asset/images/icon-check.svg" alt="check-mark" />
+              <img
+                src="/asset/images/icon-check.svg"
+                alt="check-mark"
+                className="absolute w-3 h-3 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              />
             )}
           </button>
           <span
