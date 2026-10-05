@@ -12,7 +12,10 @@ export default function ToDoLists() {
       className="bg-white rounded-md divide-y divide-custom-gray-300 shadow-2xl"
     >
       {todos.map((todo) => (
-        <div key={todo.id} className="flex items-center gap-6 px-6 py-4">
+        <div
+          key={todo.id}
+          className="flex items-center gap-6 justify-between px-6 py-4 group cursor-pointer"
+        >
           <button
             onClick={() => toggleToDo(todo.id)}
             className={`relative w-6 h-6 rounded-full border p-px cursor-pointer transition-all flex items-center justify-center
@@ -32,10 +35,15 @@ export default function ToDoLists() {
             )}
           </button>
           <span
-            className={`text-lg  ${todo.completed ? "line-through text-custom-gray-300" : "text-custom-Gray-600"}`}
+            className={`text-lg cursor-pointer ${todo.completed ? "line-through text-custom-gray-300" : "text-custom-Gray-600"}`}
           >
             {todo.text}
           </span>
+          <img
+            src="/asset/images/icon-cross.svg"
+            alt="cross-icon"
+            className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+          />
         </div>
       ))}
       <Footer />
