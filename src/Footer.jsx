@@ -37,7 +37,7 @@ export default function Footer() {
       </div>
       <div>
         <p
-          onClick={() => setSelectedOption("clear")}
+          onClick={clearCompleted}
           className="cursor-pointer  hover:text-custom-Navy-900 transition-all"
         >
           Clear Completed
