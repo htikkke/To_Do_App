@@ -3,7 +3,14 @@ import { FormContext } from "./App";
 import Footer from "./Footer";
 
 export default function ToDoLists() {
-  const { todos, toggleToDo, deleteToDo } = useContext(FormContext);
+  const { todos, toggleToDo, deleteToDo, selectedOption } =
+    useContext(FormContext);
+  // Calculate all,active and completed
+  const filterToDos = todos.filter((todo) => {
+    if (selectedOption === "active") return !todo.completed;
+    if (selectedOption === "completed") return todo.completed;
+    return true;
+  });
   // If there are no todos, don't render the container or footer
   if (todos.length === 0) return null;
   return (
