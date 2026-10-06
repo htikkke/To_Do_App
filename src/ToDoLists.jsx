@@ -18,7 +18,7 @@ export default function ToDoLists() {
       id="toDoListContainer"
       className="bg-white rounded-md divide-y divide-custom-gray-300 shadow-2xl"
     >
-      {todos.map((todo) => (
+      {filterToDos.map((todo) => (
         <div
           key={todo.id}
           className="flex items-center gap-6 justify-between px-6 py-4 group cursor-pointer"

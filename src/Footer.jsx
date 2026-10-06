@@ -2,8 +2,12 @@ import { useContext } from "react";
 import { FormContext } from "./App";
 
 export default function Footer() {
-  const { todos, selectedOption, setSelectedOption } = useContext(FormContext);
+  const { setToDos, todos, selectedOption, setSelectedOption } =
+    useContext(FormContext);
   const leftThingsToDo = todos.filter((todo) => !todo.completed).length;
+  const clearCompleted = () => {
+    setToDos((prevTodos) => prevTodos.filter((todo) => !todo.completed));
+  };
   return (
     <div className="flex items-center justify-between px-6 py-4 text-custom-Gray-600 text-sm">
       <div>
@@ -32,7 +36,10 @@ export default function Footer() {
         </p>
       </div>
       <div>
-        <p className="cursor-pointer  hover:text-custom-Navy-900 transition-all">
+        <p
+          onClick={() => setSelectedOption("clear")}
+          className="cursor-pointer  hover:text-custom-Navy-900 transition-all"
+        >
           Clear Completed
         </p>
       </div>
