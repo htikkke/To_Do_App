@@ -7,6 +7,7 @@ export const FormContext = createContext();
 export default function App() {
   const [todos, setToDos] = useState([]);
   const [inputText, setInputText] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleInput = (e) => {
     e.preventDefault();
