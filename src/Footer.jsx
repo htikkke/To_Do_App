@@ -14,19 +14,19 @@ export default function Footer() {
       <div className="flex gap-4">
         <p
           onClick={() => setSelectedOption("all")}
-          className="cursor-pointer hover:text-custom-Navy-900 transition-all"
+          className={`cursor-pointer hover:text-custom-Navy-900 transition-all ${selectedOption === "all" ? "text-custom-blue-500" : "text-custom-Gray-600"}`}
         >
           All
         </p>
         <p
           onClick={() => setSelectedOption("active")}
-          className="cursor-pointer  hover:text-custom-Navy-900 transition-all"
+          className={`cursor-pointer hover:text-custom-Navy-900 transition-all ${selectedOption === "active" ? "text-custom-blue-500" : "text-custom-Gray-600"}`}
         >
           Active
         </p>
         <p
           onClick={() => setSelectedOption("completed")}
-          className="cursor-pointer  hover:text-custom-Navy-900 transition-all"
+          className={`cursor-pointer hover:text-custom-Navy-900 transition-all ${selectedOption === "completed" ? "text-custom-blue-500" : "text-custom-Gray-600"}`}
         >
           Completed
         </p>
