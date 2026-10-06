@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { FormContext } from "./App";
 
 export default function Footer() {
-  const { todos } = useContext(FormContext);
+  const { todos, selectedOption, setSelectedOption } = useContext(FormContext);
   const leftThingsToDo = todos.filter((todo) => !todo.completed).length;
   return (
     <div className="flex items-center justify-between px-6 py-4 text-custom-Gray-600 text-sm">
@@ -12,13 +12,22 @@ export default function Footer() {
         </p>
       </div>
       <div className="flex gap-4">
-        <p className="cursor-pointer hover:text-custom-Navy-900 transition-all">
+        <p
+          onClick={() => setSelectedOption("all")}
+          className="cursor-pointer hover:text-custom-Navy-900 transition-all"
+        >
           All
         </p>
-        <p className="cursor-pointer  hover:text-custom-Navy-900 transition-all">
+        <p
+          onClick={() => setSelectedOption("active")}
+          className="cursor-pointer  hover:text-custom-Navy-900 transition-all"
+        >
           Active
         </p>
-        <p className="cursor-pointer  hover:text-custom-Navy-900 transition-all">
+        <p
+          onClick={() => setSelectedOption("completed")}
+          className="cursor-pointer  hover:text-custom-Navy-900 transition-all"
+        >
           Completed
         </p>
       </div>

@@ -44,6 +44,8 @@ export default function App() {
         handleInput,
         toggleToDo,
         deleteToDo,
+        selectedOption,
+        setSelectedOption,
       }}
     >
       <div
