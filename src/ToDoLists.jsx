@@ -3,7 +3,7 @@ import { FormContext } from "./App";
 import Footer from "./Footer";
 
 export default function ToDoLists() {
-  const { todos, toggleToDo, deleteToDo, selectedOption } =
+  const { todos, toggleToDo, deleteToDo, selectedOption, mode } =
     useContext(FormContext);
   // Calculate all,active and completed
   const filterToDos = todos.filter((todo) => {
@@ -16,12 +16,12 @@ export default function ToDoLists() {
   return (
     <div
       id="toDoListContainer"
-      className="bg-white rounded-md divide-y divide-custom-gray-300 shadow-2xl"
+      className={`${mode === "light" ? "bg-white divide-custom-gray-300" : "bg-custom-Navy-900 divide-custom-Purple-700"} rounded-md divide-y shadow-2xl transition-colors`}
     >
       {filterToDos.map((todo) => (
         <div
           key={todo.id}
-          className="flex items-center gap-6 justify-between px-6 py-4 group cursor-pointer"
+          className="flex items-center gap-8 justify-between px-6 py-4 group cursor-pointer"
         >
           {/* Check-box */}
           <button
@@ -30,9 +30,13 @@ export default function ToDoLists() {
               ${todo.completed ? "bg-linear-to-br from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)] border-transparent" : "border-custom-gray-300 hover:bg-linear-to-br hover:from-[hsl(192,100%,67%)] hover:to-[hsl(280,87%,65%)]"}`}
           >
             <span
-              className={`w-full h-full rounded-full flex items-center justify-center
-          ${todo.completed ? "bg-transparent" : "bg-white"}
-        `}
+              className={`w-full h-full rounded-full flex items-center justify-center transition-all ${
+                todo.completed
+                  ? "bg-transparent"
+                  : mode === "dark"
+                    ? "bg-custom-Navy-900"
+                    : "bg-white"
+              }`}
             ></span>
             {/* right-mark in the check-box */}
             {todo.completed && (

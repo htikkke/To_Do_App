@@ -53,7 +53,7 @@ export default function App() {
     >
       <div
         id="main-container"
-        className="w-full min-h-screen bg-[url('/asset/images/bg-desktop-light.jpg')] bg-repeat-x flex items-start justify-center"
+        className={`w-full min-h-screen ${mode === "light" ? "bg-[url('/asset/images/bg-desktop-light.jpg')]" : "bg-[url('/asset/images/bg-desktop-dark.jpg')] bg-custom-Navy-950"} bg-repeat-x flex items-start justify-center transition-all`}
       >
         <div
           id="to-do-app-container"

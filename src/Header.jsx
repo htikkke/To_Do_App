@@ -11,7 +11,15 @@ export default function Header() {
       <h1 className="uppercase text-white font-bold text-4xl tracking-widest">
         Todo
       </h1>
-      <img onClick={toggleMode} src="/asset/images/icon-moon.svg" />
+      <img
+        onClick={toggleMode}
+        className="cursor-pointer"
+        src={
+          mode === "light"
+            ? "/asset/images/icon-moon.svg"
+            : "/asset/images/icon-sun.svg"
+        }
+      />
     </div>
   );
 }
