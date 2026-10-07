@@ -8,6 +8,7 @@ export default function App() {
   const [todos, setToDos] = useState([]);
   const [inputText, setInputText] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+  const [mode, setMode] = useState("light");
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -46,6 +47,8 @@ export default function App() {
         deleteToDo,
         selectedOption,
         setSelectedOption,
+        mode,
+        setMode,
       }}
     >
       <div
