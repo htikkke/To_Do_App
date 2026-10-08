@@ -57,7 +57,7 @@ export default function App() {
       >
         <div
           id="to-do-app-container"
-          className="w-[40%] rounded-2xl p-6 flex flex-col gap-6 mt-18"
+          className="w-[98%] sm:w-[90%] max-w-xl rounded-2xl p-6 flex flex-col gap-6 mt-18"
         >
           <Header />
           <InputContainer />
