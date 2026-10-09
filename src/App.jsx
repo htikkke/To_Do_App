@@ -53,11 +53,12 @@ export default function App() {
     >
       <div
         id="main-container"
-        className={`w-full min-h-screen ${mode === "light" ? "bg-[url('/asset/images/bg-desktop-light.jpg')]" : "bg-[url('/asset/images/bg-desktop-dark.jpg')] bg-custom-Navy-950"} bg-repeat-x flex items-start justify-center transition-all`}
+        className={`w-full min-h-screen ${mode === "light" ? "bg-[url('/asset/images/bg-desktop-light.jpg')] max-[500px]:bg-[url('/asset/images/bg-mobile-light.jpg')]" : "bg-[url('/asset/images/bg-desktop-dark.jpg')] bg-custom-Navy-950 max-[500px]:bg-[url('/asset/images/bg-mobile-dark.jpg')]"} bg-repeat-x flex items-start justify-center transition-all
+        `}
       >
         <div
           id="to-do-app-container"
-          className="w-[98%] sm:w-[90%] max-w-xl rounded-2xl p-6 flex flex-col gap-6 mt-18"
+          className="w-[98%] sm:w-[90%] max-w-xl rounded-2xl p-6 flex flex-col gap-6 mt-18 max-[500px]:mt-10"
         >
           <Header />
           <InputContainer />
