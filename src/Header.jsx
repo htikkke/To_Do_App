@@ -16,8 +16,8 @@ export default function Header() {
         className="cursor-pointer"
         src={
           mode === "light"
-            ? "/asset/images/icon-moon.svg"
-            : "/asset/images/icon-sun.svg"
+            ? "./asset/images/icon-moon.svg"
+            : "./asset/images/icon-sun.svg"
         }
       />
     </div>

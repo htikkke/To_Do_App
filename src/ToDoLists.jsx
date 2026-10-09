@@ -58,7 +58,7 @@ export default function ToDoLists() {
             {/* cross-icon */}
             <img
               onClick={() => deleteToDo(todo.id)}
-              src="/asset/images/icon-cross.svg"
+              src="./asset/images/icon-cross.svg"
               alt="cross-icon"
               className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
             />
@@ -66,7 +66,9 @@ export default function ToDoLists() {
         ))}
         <Footer />
       </div>
-      <MobileFooter />
+      <div className="hidden max-[500px]:block">
+        <MobileFooter />
+      </div>
       <p
         className={`bg-transparent mt-10 text-center text-sm ${mode === "light" ? "text-custom-gray-600" : "text-custom-Gray-600"}`}
       >
