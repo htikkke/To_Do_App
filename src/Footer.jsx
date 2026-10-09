@@ -17,7 +17,7 @@ export default function Footer() {
           {leftThingsToDo} {leftThingsToDo > 1 ? "items" : "item"} left
         </p>
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-[500px]:hidden">
         <p
           onClick={() => setSelectedOption("all")}
           className={`cursor-pointer ${mode === "light" ? "hover:text-custom-Navy-900" : "hover:text-white"} transition-all ${selectedOption === "all" ? "text-custom-blue-500" : "text-custom-Gray-600"}`}

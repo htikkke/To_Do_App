@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FormContext } from "./App";
 import Footer from "./Footer";
-import MobileFooter from "./mobileFooter";
+import MobileFooter from "./MobileFooter";
 
 export default function ToDoLists() {
   const { todos, toggleToDo, deleteToDo, selectedOption, mode } =
