@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FormContext } from "./App";
 import Footer from "./Footer";
+import MobileFooter from "./mobileFooter";
 
 export default function ToDoLists() {
   const { todos, toggleToDo, deleteToDo, selectedOption, mode } =
@@ -65,6 +66,7 @@ export default function ToDoLists() {
         ))}
         <Footer />
       </div>
+      <MobileFooter />
       <p
         className={`bg-transparent mt-10 text-center text-sm ${mode === "light" ? "text-custom-gray-600" : "text-custom-Gray-600"}`}
       >
