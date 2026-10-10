@@ -3,6 +3,12 @@ import Header from "./Header";
 import InputContainer from "./InputContainer";
 import ToDoLists from "./ToDoLists";
 
+// Background images
+import bgLightDesktop from "./asset/images/bg-desktop-light.jpg";
+import bgLightMobile from "./asset/images/bg-mobile-light.jpg";
+import bgDarkDesktop from "./asset/images/bg-desktop-dark.jpg";
+import bgDarkMobile from "./asset/images/bg-mobile-dark.jpg";
+
 export const FormContext = createContext();
 export default function App() {
   const [todos, setToDos] = useState([]);
@@ -51,10 +57,16 @@ export default function App() {
         setMode,
       }}
     >
-      <div
+      <main
         id="main-container"
-        className={`w-full min-h-screen ${mode === "light" ? "bg-[url('/asset/images/bg-desktop-light.jpg')] max-[500px]:bg-[url('/asset/images/bg-mobile-light.jpg')]" : "bg-[url('/asset/images/bg-desktop-dark.jpg')] bg-custom-Navy-950 max-[500px]:bg-[url('/asset/images/bg-mobile-dark.jpg')]"} bg-repeat-x flex items-start justify-center transition-all
-        `}
+        style={{
+          backgroundImage: `url(${
+            mode === "light" ? bgLightDesktop : bgDarkDesktop
+          })`,
+        }}
+        className={`w-full min-h-screen bg-repeat-x bg-contain ${
+          mode === "dark" ? "bg-custom-Navy-950" : ""
+        } flex items-start justify-center transition-all max-[500px]:bg-(image:--bg-mobile)`}
       >
         <div
           id="to-do-app-container"
@@ -64,7 +76,7 @@ export default function App() {
           <InputContainer />
           <ToDoLists />
         </div>
-      </div>
+      </main>
     </FormContext.Provider>
   );
 }
