@@ -25,3 +25,17 @@
   --color-custom-Purple-800: hsl(237, 14%, 26%);
   --color-custom-Gray-600: hsl(236, 9%, 61%);
 }
+#main-container {
+  background-size: 100% 300px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+@media (max-width: 500px) {
+  #main-container {
+    background-image: var(--mobile-bg) !important;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
