@@ -7,7 +7,7 @@ export const FormContext = createContext();
 export default function App() {
   const [todos, setToDos] = useState([]);
   const [inputText, setInputText] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("all");
   const [mode, setMode] = useState("light");
 
   const handleInput = (e) => {
