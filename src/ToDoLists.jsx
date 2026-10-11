@@ -18,9 +18,9 @@ export default function ToDoLists() {
   if (todos.length === 0) return null;
   return (
     <div>
-      <div
+      <ul
         id="toDoListContainer"
-        className={`${mode === "light" ? "bg-white divide-custom-gray-300" : "bg-custom-Navy-900 divide-custom-Purple-700"} rounded-md divide-y shadow-2xl transition-colors`}
+        className={`${mode === "light" ? "bg-white divide-custom-gray-300" : "bg-custom-Navy-900 divide-custom-Purple-700"} rounded-md divide-y shadow-2xl transition-colors list-none p-0 m-0`}
       >
         {filterToDos.map((todo) => (
           <div
@@ -73,7 +73,7 @@ export default function ToDoLists() {
           </div>
         ))}
         <Footer />
-      </div>
+      </ul>
       <div className="hidden max-[500px]:block">
         <MobileFooter />
       </div>
