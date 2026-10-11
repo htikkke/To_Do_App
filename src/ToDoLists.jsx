@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { FormContext } from "./App";
 import Footer from "./Footer";
 import MobileFooter from "./MobileFooter";
-
+// Icons
+import checkIcon from "/asset/images/icon-check.svg";
+import crossIcon from "/asset/images/icon-cross.svg";
 export default function ToDoLists() {
   const { todos, toggleToDo, deleteToDo, selectedOption, mode } =
     useContext(FormContext);
@@ -27,6 +29,10 @@ export default function ToDoLists() {
           >
             {/* Check-box */}
             <button
+              type="button"
+              aria-label={
+                todo.completed ? "Mark as active" : "Mark as completed"
+              }
               onClick={() => toggleToDo(todo.id)}
               className={`relative w-6 h-6 rounded-full border p-px cursor-pointer transition-all flex items-center justify-center
               ${todo.completed ? "bg-linear-to-br from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)] border-transparent" : "border-custom-gray-300 hover:bg-linear-to-br hover:from-[hsl(192,100%,67%)] hover:to-[hsl(280,87%,65%)]"}`}
@@ -43,7 +49,7 @@ export default function ToDoLists() {
               {/* right-mark in the check-box */}
               {todo.completed && (
                 <img
-                  src="/asset/images/icon-check.svg"
+                  src={checkIcon}
                   alt="check-mark"
                   className="absolute w-3 h-3 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 />
@@ -56,12 +62,14 @@ export default function ToDoLists() {
               {todo.text}
             </span>
             {/* cross-icon */}
-            <img
+            <button
+              type="button"
+              aria-label="Delete todo"
               onClick={() => deleteToDo(todo.id)}
-              src="./asset/images/icon-cross.svg"
-              alt="cross-icon"
-              className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
-            />
+              className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity bg-transparent border-none cursor-pointer p-1"
+            >
+              <img src={crossIcon} alt="cross-icon" className="w-4 h-4" />
+            </button>
           </div>
         ))}
         <Footer />
